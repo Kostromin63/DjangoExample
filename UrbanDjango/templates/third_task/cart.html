@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+</head>
+<body>
+<h1>{{title}}</h1>
+    {% if products %}
+    <ul>
+        {% for i in products %}
+             <li>{{ i }} <button>Оплатить</button></li>
+         {% endfor %}
+    </ul>
+    {% else %}
+        <h1>Извините, Ваша корзина пуста</h1>
+    {% endif %}
+<button><a href='\platform'>Вернуться обратно
+</a></button>
+</body>
+</html>
