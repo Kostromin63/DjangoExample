@@ -4,21 +4,20 @@ from django.views.generic import TemplateView
 # Create your views here.
 
 
-class Class_home(TemplateView):
+class ClassHome(TemplateView):
     template_name = 'third_task/platform.html'
 
 
-class Class_shop(TemplateView):
+class ClassShop(TemplateView):
     template_name = 'third_task/games.html'
 
-
-def get_context_data(self, **kwargs):
-    context = super().get_context_data(**kwargs)
-    # Здесь можно произвести какие-то действия для создания контекста.
-    # Для примера в словарь просто передаются две строки
-    context['title'] = 'Игры'
-    context['products'] = (['AtomicHeart', 'Cyberpunc 2077', 'PayDay 2'])
-    return context
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Здесь можно произвести какие-то действия для создания контекста.
+        # Для примера в словарь просто передаются две строки
+        context['title'] = 'Игры'
+        context['products'] = (['AtomicHeart', 'Cyberpunc 2077', 'PayDay 2'])
+        return context
 
 
 def func_shop(request):
@@ -29,7 +28,7 @@ def func_shop(request):
     return render(request, 'third_task/games.html', context=context)
 
 
-class Class_basket(TemplateView):
+class ClassBasket(TemplateView):
     template_name = 'third_task/cart.html'
 
     def get_context_data(self, **kwargs):
