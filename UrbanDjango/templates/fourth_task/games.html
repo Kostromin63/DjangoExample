@@ -1,0 +1,22 @@
+{% extends "fourth_task/menu.html" %}
+
+{% block title %}
+{{ block.super }}
+{% endblock %}
+
+{% block navigation %}
+{{ block.super }}
+{% endblock %}
+
+{% block content %}
+<legend>Товары:</legend>
+<ul>
+    {% for i in products %}
+    <li>{{ i }} <button>Купить</button></li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+{% block footer %}
+{{ block.super }}
+{% endblock %}

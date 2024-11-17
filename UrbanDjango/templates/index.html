@@ -1,11 +1,43 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Стартовая страница</title>
+    <title>{% block title %}START{% endblock %}</title>
+    <title>index</title>
+    <link rel="stylesheet" href='{% static "style.css" %}' type="text/css">
 </head>
+
+<hr>
+
 <body>
-    <h1>Стартовая страница проекта UrbanDjango</h1>
+    <h1> Добро пожаловать на </h1>
+    <h1> cтартовую страницу проекта UrbanDjango</h1>
+
+    <hr>
+
     <a href="platform/">На главную страницу игр</a>
+
+    <hr>
+static/img/dgango_st.png
+    <div class="container">
+        <img src='{% static "vovka.jpg" %}' alt="Вовка в тридевятом царстве" height="30px" width="70px" />
+        <img class="w-50 mx-auto d-block" src="{% static 'img/vovka.png' %}" alt="photo">
+        <img src='{% static "img/dgango_st.png.jpg" %}' alt="Привет джанго" height="30px" width="70px" />
+    </div>
+
+    <div class="container">
+        {% include 'fourth_task/im.html' %}
+    </div>
 </body>
+
+<hr>
+
+<footer>
+    {% block footer %}
+    &copy; UrbanDjango
+    {% endblock %}
+</footer>
+
 </html>
